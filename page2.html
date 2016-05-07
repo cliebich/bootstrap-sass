@@ -40,7 +40,6 @@
                     <li><a href="#" class="goToLink" data-tabname="family">Family</a></li>
                     <li><a href="#" class="goToLink" data-tabname="company">Company</a></li>
                     <li><a href="#" class="goToLink" data-tabname="compounding">Compounding</a></li>
-                    <li><a href="/page2.html">page 2</a></li>
                     
                   
                 </ul>
@@ -58,28 +57,7 @@
     </div> <!-- /container -->
 
     <div class="container" style="margin-top: 50px;">
-        <ul id="myTab" class="nav nav-tabs responsive" style="margin-bottom: 15px;">
-            <li class="active"><a href="#family" data-toggle="tab">family</a></li>
-            <li ><a href="#company" data-toggle="tab">company</a></li>
-            <li><a href="#compounding" data-toggle="tab">compounding</a></li>
-        </ul>
-        <div id="myTabContent" class="tab-content responsive">
-            <div class="tab-pane fade" id="family">
-                <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
-            </div>
-            <div class="tab-pane fade in active" id="company">
-                <p>
-                    Light Blue - is a next generation admin template based on the latest Metro design. There are few reasons we want to tell you, why we have created it:
-                    We didn't like the darkness of most of admin templates, so we created this light one. We didn't like the high contrast of most of admin templates, so we created this unobtrusive one.
-                    We searched for a solution of how to make widgets look like real widgets, so we decided that deep background - is what makes widgets look real.
-                </p>
-                <button class="btn btn-lg btn-primary">Button with click event attached</button>
-            </div>
-            <div class="tab-pane fade" id="compounding">
-                <p>Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork. Williamsburg banh mi whatever gluten-free, carles pitchfork biodiesel fixie etsy retro mlkshk vice blog. Scenester cred you probably haven't heard of them, vinyl craft beer blog stumptown. Pitchfork sustainable tofu synth chambray yr.</p>
-            </div>
-           
-        </div>
+       sdasdsadasdadsasdas
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -97,8 +75,68 @@
             $("#wrapper").toggleClass("toggled");
         });
     </script>
+    <script>
+    // when tab is fired change appearance
+    $('a[data-toggle="tab"]').on('show.bs.tab', function (e) {
+        var tab = $(e.target);
+        var allTabs = $('a[data-toggle="tab"]');
+        allTabs.removeClass("disabled");
+        tab.addClass("disabled");
+        var head = $("#head");
+        var navbar = $(".navbar");
+        var comLogo = $(".company-logo");
 
-    <script src="JavaScript.js"></script>
+        head.removeClass("mcguff-main mcguff-noanim mcguff-company mcguff-compounding");
+        navbar.removeClass("navbar-family navbar-company navbar-compounding");
+        comLogo.removeClass("logo-family logo-company logo-compounding");
+
+        if (tab.attr("id") == "family") {
+            head.addClass("mcguff-main");
+            navbar.addClass("navbar-family");
+            comLogo.addClass("logo-family");
+        } else if (tab.attr("id") == "company") {
+            head.addClass("mcguff-company")
+            navbar.addClass("navbar-company");
+            comLogo.addClass("logo-company");
+        } else if (tab.attr("id") == "Compounding") {
+            head.addClass("mcguff-compounding");
+            navbar.addClass("navbar-compounding");
+            comLogo.addClass("logo-compounding");
+        }
+        // set localstorage tabname based on id of tab
+        window.localStorage.LastActiveTabName = tab.attr("id");
+    });
+
+    // when click on nav set localstorage tabname then goto homepage if necessary
+    // otherwise just show tab based on data-tabname
+    $(".goToLink").click(function () {
+        var TabName = $(this).data("tabname");
+        if ($(".homepage-flag").length == 0) {
+            window.localStorage.LastActiveTabName = TabName;
+            window.location.href = "/";
+        } else {
+            if ($('.navbar-collapse').hasClass("navbar-collapse in")) {
+                $('.navbar-collapse').collapse('hide');
+            }
+            $("#" + TabName).tab("show");
+        }
+    });
+
+    // show correct tab when page loads based on localstorage
+    $(document).ready(function () {
+        if (window.localStorage.LastActiveTabName != null && window.localStorage.LastActiveTabName !== "") {
+            $("#" + window.localStorage.LastActiveTabName).tab('show');
+        }
+    });
+
+
+    // use these links for nav
+    //<a href="#" class="goToLink" data-tabname="family">Home</a>
+    //<a href="#" class="goToLink" data-tabname="family">Family</a>
+    //<a href="#" class="goToLink" data-tabname="company">Company</a>
+    //<a href="#" class="goToLink" data-tabname="compounding">Compounding</a>
+    </script>
+
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="/js/ie10-viewport-bug-workaround.js"></script>
 </body>
