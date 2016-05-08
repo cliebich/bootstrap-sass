@@ -42,7 +42,7 @@ $(".goToLink").click(function () {
             loadWithAjax(ev.target.href);
         }
     });
-    localStorage.setItem('lastTab', $(this).attr('href'));
+    localStorage.setItem('lastTab', $(this).attr('href')); //reading from href
     if ($(".homepage-flag").length == 0) {
         window.location.href = "/";
     } else {

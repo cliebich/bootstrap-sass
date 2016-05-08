@@ -58,7 +58,7 @@ $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
 
 
 $(".goToLink").click(function () {
-    var TabName = $(this).data("tabname");
+    var TabName = $(this).data("tabname"); //reading from data-tabname
     if ($(".homepage-flag").length == 0) {
         window.location.href = "/";
     } else {
