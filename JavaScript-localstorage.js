@@ -39,10 +39,10 @@ $(".goToLink").click(function () {
     addEventListener('click', function (ev) {  //stops # from being added to url
         if (ev.target.classList.contains('goToLink')) {
             ev.preventDefault();
-            loadWithAjax(ev.target.href);
+            //loadWithAjax(ev.target.href); // had error when using fast async script loading
         }
     });
-    localStorage.setItem('lastTab', $(this).attr('href')); //reading from href
+    localStorage.setItem('lastTab', $(this).attr('href'));
     if ($(".homepage-flag").length == 0) {
         window.location.href = "/";
     } else {

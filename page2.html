@@ -38,9 +38,9 @@
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     
-                    <li><a href="#family" class="goToLink" data-tabname="#family">Family</a></li>
-                    <li><a href="#company" class="goToLink" data-tabname="#company">Company</a></li>
-                    <li><a href="#compounding" class="goToLink" data-tabname="#compounding">Compounding</a></li>
+                    <li><a href="#family" class="goToLink" data-tabname="family">Family</a></li>
+                    <li><a href="#company" class="goToLink" data-tabname="company">Company</a></li>
+                    <li><a href="#compounding" class="goToLink" data-tabname="compounding">Compounding</a></li>
                     <li><a href="/page2.html">page 2</a></li>
                     
                   
@@ -50,7 +50,7 @@
     </nav>
 <h1>Page 2</h1>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script>
         // check to see if jquery loaded if so continue to load scripts async
         (function () {
@@ -100,21 +100,13 @@
             document.getElementsByTagName("body")[0].appendChild(script);
             script.src = src;
         }
+        // must load all javascript this way and in order
+        AttachScript("/js/bootstrap.min.js");
         AttachScript("JavaScript-localstorage.js");
-    </script>
-    <script src="/js/bootstrap.min.js" async></script>
-    <script type="text/javascript">
+        AttachScript("/js/ie10-viewport-bug-workaround.js");
+        AttachScript("/js/custom.js");
 
+    </script>
 
-        $('.dropdown-toggle').dropdownHover();
-    </script>
-    <script>
-        $("#menu-toggle").click(function (e) {
-            e.preventDefault();
-            $("#wrapper").toggleClass("toggled");
-        });
-    </script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="/js/ie10-viewport-bug-workaround.js"></script>
 </body>
 </html>
