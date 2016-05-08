@@ -10,8 +10,9 @@
     <link rel="icon" href="favicon.ico">
 
     <title>Theme Template for Bootstrap</title>
-
-    <link href="/css/bootstrap/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet" />
+    <link href="/css/test.css" rel="stylesheet" />
+    
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -21,7 +22,7 @@
 </head>
 
 <body>
-
+    <div id="head"></div>
     <!-- Fixed navbar -->
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
@@ -36,10 +37,10 @@
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="#" class="goToLink" data-tabname="family">Home</a></li>
-                    <li><a href="#" class="goToLink" data-tabname="family">Family</a></li>
-                    <li><a href="#" class="goToLink" data-tabname="company">Company</a></li>
-                    <li><a href="#" class="goToLink" data-tabname="compounding">Compounding</a></li>
+                    
+                    <li><a href="#family" class="goToLink" data-tabname="family">Family</a></li>
+                    <li><a href="#company" class="goToLink" data-tabname="company">Company</a></li>
+                    <li><a href="#compounding" class="goToLink" data-tabname="compounding">Compounding</a></li>
                     <li><a href="/page2.html">page 2</a></li>
                     
                   
@@ -60,7 +61,7 @@
     <div class="container" style="margin-top: 50px;">
         <ul id="myTab" class="nav nav-tabs responsive" style="margin-bottom: 15px;">
             <li class="active"><a href="#family" data-toggle="tab">family</a></li>
-            <li ><a href="#company" data-toggle="tab">company</a></li>
+            <li><a href="#company" data-toggle="tab">company</a></li>
             <li><a href="#compounding" data-toggle="tab">compounding</a></li>
         </ul>
         <div id="myTabContent" class="tab-content responsive">
@@ -85,9 +86,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
     <script type="text/javascript">
-        (function ($) {
-            tabscollapse.responsiveTabs(['xs', 'sm']);
-        })(jQuery);
+       
 
         $('.dropdown-toggle').dropdownHover();
     </script>
@@ -97,8 +96,8 @@
             $("#wrapper").toggleClass("toggled");
         });
     </script>
-
-    <script src="JavaScript.js"></script>
+    <div class="homepage-flag" style="display:none;"></div>
+    <script src="JavaScript-localstorage.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="/js/ie10-viewport-bug-workaround.js"></script>
 </body>
