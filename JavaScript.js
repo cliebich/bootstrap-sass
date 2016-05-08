@@ -70,7 +70,6 @@ $(".goToLink").click(function () {
 });
 
 // use these links for nav
-//<a href="#" class="goToLink" data-tabname="family">Home</a>
-//<a href="#" class="goToLink" data-tabname="family">Family</a>
-//<a href="#" class="goToLink" data-tabname="company">Company</a>
-//<a href="#" class="goToLink" data-tabname="compounding">Compounding</a>
+//<li><a href="#family" class="goToLink" data-tabname="family">Family</a></li>
+//<li><a href="#company" class="goToLink" data-tabname="company">Company</a></li>
+//<li><a href="#compounding" class="goToLink" data-tabname="compounding">Compounding</a></li>
