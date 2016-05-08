@@ -14,15 +14,15 @@
         //comLogo.removeClass("logo-family logo-company logo-compounding");
 
         if (lastTab == "#family") {
-            head.addClass("mcguff-main");
+            head.addClass("mcguff-main", 500);
             //navbar.addClass("navbar-family");
             //comLogo.addClass("logo-family");
         } else if (lastTab == "#company") {
-            head.addClass("mcguff-company");
+            head.addClass("mcguff-company", 500);
             //navbar.addClass("navbar-company");
             //comLogo.addClass("logo-company");
         } else if (lastTab == "#compounding") {
-            head.addClass("mcguff-compounding");
+            head.addClass("mcguff-compounding", 500);
             //navbar.addClass("navbar-compounding");
             //comLogo.addClass("logo-compounding");
         }
