@@ -9,20 +9,19 @@
         //var navbar = $(".navbar");
         //var comLogo = $(".company-logo");
 
-        head.removeClass("mcguff-main mcguff-noanim mcguff-company mcguff-compounding");
+        head.removeClass("mcguff-main mcguff-company mcguff-compounding");
         //navbar.removeClass("navbar-family navbar-company navbar-compounding");
         //comLogo.removeClass("logo-family logo-company logo-compounding");
-
-        if (lastTab == "#family") {
-            head.addClass("mcguff-main", 500);
+       if (lastTab == "#family") {
+            head.addClass("mcguff-main");
             //navbar.addClass("navbar-family");
             //comLogo.addClass("logo-family");
         } else if (lastTab == "#company") {
-            head.addClass("mcguff-company", 500);
+            head.addClass("mcguff-company");
             //navbar.addClass("navbar-company");
             //comLogo.addClass("logo-company");
         } else if (lastTab == "#compounding") {
-            head.addClass("mcguff-compounding", 500);
+            head.addClass("mcguff-compounding");
             //navbar.addClass("navbar-compounding");
             //comLogo.addClass("logo-compounding");
         }
@@ -45,6 +44,7 @@ $(".goToLink").click(function () {
     localStorage.setItem('lastTab', $(this).attr('href'));
     if ($(".homepage-flag").length == 0) {
         window.location.href = "/";
+        
     } else {
         if ($('.navbar-collapse').hasClass("navbar-collapse collapse in")) { // remove second collapse for mcguff
             $('.navbar-collapse').collapse('hide');
@@ -52,6 +52,7 @@ $(".goToLink").click(function () {
         var lastTab = localStorage.getItem('lastTab');
         if (lastTab) {
             $("#myTab a[href=" + lastTab + "]").tab('show');
+
         }
     }
 });
