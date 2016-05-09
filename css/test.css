@@ -1,5 +1,7 @@
+/* override active nav menu item to remove background */
 .navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
-    background-color: rgba(0,0,0,0) !important;
+    background-color: rgba(0,0,0,0) !important;  /* same as default color */
+    color: #9d9d9d !important; /* same as default color */
 }
 
 .navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .active > a {
@@ -17,8 +19,8 @@
     height: 400px;
 }
 
-    #head.mcguff-main {
-        background: url('/images/11.jpg') no-repeat;
+    #head.mcguff-family {
+        background: url('/images/3.jpg') no-repeat;
         background-size: cover;
         transition: background-image .5s;
         -moz-transition: background-image .5s;
@@ -39,24 +41,6 @@
         transition: background-image .5s;
         -moz-transition: background-image .5s;
         -webkit-transition: background-image .5s;
-    }
-
-    #head.mcguff-main-noanim {
-        background: url('/images/11.jpg') no-repeat;
-        background-size: cover;
-        transition: background-image 0s;
-        -moz-transition: background-image 0s;
-        -webkit-transition: background-image 0s;
-    }
-
-    #head.mcguff-company-noanim {
-        background: url('/images/22.jpg') no-repeat;
-        background-size: cover;
-    }
-
-    #head.mcguff-compounding-noanim {
-        background: url('/images/11.jpg') no-repeat;
-        background-size: cover;
     }
 
 h1 {
